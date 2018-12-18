@@ -1,0 +1,16 @@
+<div class="top-div">
+  E-STATIONARY MART
+  <img src="../../../assets/cart.jpg" width="5%" height="90%" style="margin-bottom: 0.4%">
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{user|titlecase}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" routerLink="/history">HISTORY</a>
+      <a class="dropdown-item" routerLink="/login" (click)="onLogout()">LOGOUT</a>
+    </div>
+  </div>
+
+</div>

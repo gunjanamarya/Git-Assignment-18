@@ -1,0 +1,205 @@
+<app-header></app-header>
+
+<div class="cart-header" *ngIf="amount_spent > 0">
+    <div class="amt-spent">
+        &#x20b9; {{amount_spent}} <br> **Inclusive of all taxes
+    </div>
+    <div class="header-btn">
+        <button class="btn btn-success" (click)="goToCart()">
+            VIEW CART
+        </button>
+        <button class="btn btn-success" (click)="resetCart()">
+            EMPTY CART
+        </button>
+    </div>
+</div>
+
+<div class="card-group">
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/pen.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">FOUNTAIN PEN
+                <p class="cost">&#x20b9; 20</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price : &#x20b9; {{ displayQuantity('Pen') * (findPrice('Pen')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Pen')">
+                        <button class="order-btn" (click)="decreement('Pen')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Pen')">
+                        <button class="order-btn" (click)="add(0)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Pen')">
+                        <button class="order-btn">{{displayQuantity('Pen')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Pen')">
+                        <button class="order-btn" (click)="increement('Pen')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/pencil.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">PENCIL
+                <p class="cost">&#x20b9; 20</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price :&#x20b9; {{ displayQuantity('Pencil') * (findPrice('Pencil')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Pencil')">
+                        <button class="order-btn" (click)="decreement('Pencil')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Pencil')">
+                        <button class="order-btn" (click)="add(1)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Pencil')">
+                        <button class="order-btn">{{displayQuantity('Pencil')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Pencil')">
+                        <button class="order-btn" (click)="increement('Pencil')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/eraser.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">ERASER
+                <p class="cost">&#x20b9; 10</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price : &#x20b9; {{ displayQuantity('Eraser') * (findPrice('Eraser')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Eraser')">
+                        <button class="order-btn" (click)="decreement('Eraser')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Eraser')">
+                        <button class="order-btn" (click)="add(2)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Eraser')">
+                        <button class="order-btn">{{displayQuantity('Eraser')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Eraser')">
+                        <button class="order-btn" (click)="increement('Eraser')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-group">
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/sharpner.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">PENCIL SHARPNER
+                <p class="cost">&#x20b9; 10</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price : &#x20b9; {{ displayQuantity('Sharpner') * (findPrice('Sharpner')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Sharpner')">
+                        <button class="order-btn" (click)="decreement('Sharpner')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Sharpner')">
+                        <button class="order-btn" (click)="add(3)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Sharpner')">
+                        <button class="order-btn">{{displayQuantity('Sharpner')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Sharpner')">
+                        <button class="order-btn" (click)="increement('Sharpner')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/writing-pad.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">WRITING PAD
+                <p class="cost">&#x20b9; 30</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price : &#x20b9; {{ displayQuantity('Writing Pad') * (findPrice('Writing Pad')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Writing Pad')">
+                        <button class="order-btn" (click)="decreement('Writing Pad')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Writing Pad')">
+                        <button class="order-btn" (click)="add(4)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Writing Pad')">
+                        <button class="order-btn">{{displayQuantity('Writing Pad')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Writing Pad')">
+                        <button class="order-btn" (click)="increement('Writing Pad')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="../../../assets/ruler.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">RULER
+                <p class="cost">&#x20b9; 20</p>
+            </h5>
+            <div class="card-text">
+                <div class="total-price">
+                    Total price :&#x20b9; {{ displayQuantity('Ruler') * (findPrice('Ruler')) }}
+                    <br>
+                </div>
+                <div class="selection">
+                    <div class="add-items" *ngIf="displayQuantity('Ruler')">
+                        <button class="order-btn" (click)="decreement('Ruler')">-</button>
+                    </div>
+                    <div class="add-items" *ngIf="!displayQuantity('Ruler')">
+                        <button class="order-btn" (click)="add(5)">ADD</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Ruler')">
+                        <button class="order-btn">{{displayQuantity('Ruler')}}</button>
+                    </div>
+                    <div class="add-items" *ngIf="displayQuantity('Ruler')">
+                        <button class="order-btn" (click)="increement('Ruler')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Warning Modal -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h6> Are you sure you want to empty the cart ? This will cancel your edit order transaction .
+                </h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" (click)="forceClear()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

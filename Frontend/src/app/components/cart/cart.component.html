@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+<h5>Your Cart:</h5>
+<div class="item-div" *ngIf="find('Pen')!=-1">
+  <img src="../../../assets/pen.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Pen')].item}}
+    <br>
+    Total Quantity : {{cart[find('Pen')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Pen') * cart[find('Pen')].quantity}}
+  </div>
+</div>
+
+<div class="item-div" *ngIf="find('Pencil')!=-1">
+  <img src="../../../assets/pencil.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Pencil')].item}}
+    <br>
+    Total Quantity : {{cart[find('Pencil')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Pencil') * cart[find('Pencil')].quantity}}
+  </div>
+</div>
+
+<div class="item-div" *ngIf="find('Eraser')!=-1">
+  <img src="../../../assets/eraser.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Eraser')].item}}
+    <br>
+    Total Quantity : {{cart[find('Eraser')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Eraser') * cart[find('Eraser')].quantity}}
+  </div>
+</div>
+
+<div class="item-div" *ngIf="find('Sharpner')!=-1">
+  <img src="../../../assets/sharpner.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Sharpner')].item}}
+    <br>
+    Total Quantity : {{cart[find('Sharpner')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Sharpner') * cart[find('Sharpner')].quantity}}
+  </div>
+</div>
+
+<div class="item-div" *ngIf="find('Writing Pad')!=-1">
+  <img src="../../../assets/writing-pad.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Writing Pad')].item}}
+    <br>
+    Total Quantity : {{cart[find('Writing Pad')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Writing Pad') * cart[find('Writing Pad')].quantity}}
+  </div>
+</div>
+
+<div class="item-div" *ngIf="find('Ruler')!=-1">
+  <img src="../../../assets/ruler.jpg" alt="Card image cap">
+  <div class="content">
+    Item : {{cart[find('Ruler')].item}}
+    <br>
+    Total Quantity : {{cart[find('Ruler')].quantity}}
+    <br>
+    Total Price : &#x20b9;{{findPrice('Ruler') * cart[find('Ruler')].quantity}}
+  </div>
+</div>
+
+<button *ngIf="!edit" type="button" class="btn btn-success" (click)="submit()">PLACE ORDER</button>
+<button *ngIf="edit" type="button" class="btn btn-success" (click)="onEdit()">EDIT ORDER</button>
+<button *ngIf="edit" type="button" class="btn btn-danger" (click)="cancelEdit()">CANCEL EDIT</button>
+<br>
+<br>
+<p> Missed Something ?? <a routerLink="/dashboard">Go Back</a></p>
+<p *ngIf="error" style="color:red">{{error}}</p>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h5>Yay... Your order is placed !! Thank you for shopping with us
+        </h5>
+        <h6>You have spent &#x20b9;{{amount_spent}}</h6>
+        <br>
+        <button type="button" class="btn btn-success" style="margin:0px" (click)="goToHistory()">VIEW
+          ACTIVE ORDER(s)</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+img{
+    width: 99%;
+    height: 15.875em;
+    margin: 0.5%;
+}
+
+.card-group{
+    width: 70%;
+    margin: auto;
+}
+
+.card{
+    margin: 1%;
+    height: 60%;
+    display: flex;
+    border-radius: 0px;
+    border: 1px solid grey !important;
+    box-shadow: 3px 3px grey;
+}
+
+.cost{
+    float:right;
+    color: green;
+}
+
+.add-items{
+    display: inline;   
+    float: left; 
+}
+
+button.order-btn{
+    background-color: white;
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+.goto{
+    display: inline;
+}
+
+.total-price{
+    display: inline-block;
+    color: red;
+    left: 0%;
+    /* float: left;   */
+}
+
+.amt-spent {
+    float:right;
+}
+
+.cart-header{    
+    padding-right: 1%;
+    height: 50px;
+    background-color: #6c757d;
+    color: white;
+}
+
+a{         
+    color: white;
+    text-decoration: none;    
+}
+
+.header-btn{
+    /* float: left; */
+    padding-top: 0.3%;
+    padding-left: 1%;
+}

@@ -1,0 +1,36 @@
+a,h4,h5.heading{
+    margin: 1%;
+}
+.orders-list{
+    border-radius: 5px;
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid rgb(11, 157, 194);;
+}
+
+.order{
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 1%;
+    margin-top: 0.5%;
+}
+
+h6{
+    color: brown;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.cost{
+    color: green;    
+    font-weight: bold;
+}
+
+.note{
+    color: red;
+}
+
+button{
+    margin-right: 1%;
+}

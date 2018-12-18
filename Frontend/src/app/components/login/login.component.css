@@ -1,0 +1,27 @@
+.top-div{
+    top: 50%;    
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(11, 157, 194);
+}
+.main-div{
+    height: 300px;
+    /* line-height: 300px; */
+    width: 600px;
+    margin: 10% auto;    
+    border: 1px solid  rgb(11, 157, 194);
+    border-radius: 4px;
+}
+
+form {
+    margin: 10px;
+}
+
+button{
+    width: 100%;
+    background-color: rgb(11, 157, 194);
+    color: white;
+}

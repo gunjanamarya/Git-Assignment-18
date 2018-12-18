@@ -1,0 +1,47 @@
+<app-header></app-header>
+<a routerLink="/dashboard">Go to Dashboard to shop more !!</a>
+
+<h5 class="heading">Your Orders :</h5>
+<p *ngIf="show; then tmpl2 else tmpl1"></p>
+<ng-template #tmpl1>
+    <div class="orders-list" *ngIf="active_orders.length > 0">
+        <h5>ACTIVE ORDER(s)</h5>
+        <p class="note">Note** &nbsp; Your orders will be auto approved within
+            10 mins of order submission. You can edit/cancel active orders only.</p>
+        <div *ngFor="let order of active_orders">
+            <div class="order">
+                <h6>Order ID - {{order.id}} @ {{order.purchase_timestamp | date : 'short'}}</h6>
+                <div *ngFor="let item of order.cart">
+                    Item : {{item.item}} , Quantity : {{item.quantity}}
+                </div>
+                Order Status : {{order.order_status}}
+                <p class="cost">
+                    Total spending : &#x20b9; {{order.amount_spent}}
+                </p>
+                <button class="btn btn-primary" (click)="edit(order.id)">EDIT ORDER</button>
+                <button class="btn btn-danger" (click)="delete(order.id)">CANCEL ORDER</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="orders-list" *ngIf="approved_orders.length > 0">
+        <h5>APPROVED ORDER(s)</h5>
+        <div *ngFor="let order of approved_orders">
+            <div class="order">
+                <h6>Order ID - {{order.id}} @ {{order.purchase_timestamp | date : 'short'}}</h6>
+
+                <div *ngFor="let item of order.cart">
+                    Item : {{item.item}} , Quantity : {{item.quantity}}
+                </div>
+                Order Status : {{order.order_status}}
+                <p class="cost">
+                    Total spending : &#x20b9; {{order.amount_spent}}
+                </p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #tmpl2>
+    <h4>&#x2639; It's so lonely here</h4>
+</ng-template>
